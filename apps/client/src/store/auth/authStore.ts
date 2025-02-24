@@ -24,9 +24,6 @@ const authApi: StateCreator<AuthStateProps> = set => ({
 	token: null,
 	user: null,
 	setToken: (token: string) => {
-		console.log('Ya existe un token', Cookies.get('token'));
-
-		console.log('AQUI se setea el token', token);
 		set({ token });
 	},
 	login: async (sesionId, id_system) => {

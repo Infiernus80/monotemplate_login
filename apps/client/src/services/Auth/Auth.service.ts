@@ -1,6 +1,5 @@
 import { AxiosError } from 'axios';
 import { Http_Api } from '../apiClient';
-import Cookies from 'js-cookie';
 
 export interface IApiResponse<T> {
 	status: boolean;
@@ -45,9 +44,6 @@ export class Auth_Service {
 		}
 	}
 	public static async prueba() {
-		this.http_api.headers = {
-			Authorization: `Bearer ${Cookies.get('token')}`,
-		};
 		const endpoint = `${process.env.NEXT_PUBLIC_AUTH_DEV}/authentication/api/c-catalog/get-systems`;
 		try {
 			const response =

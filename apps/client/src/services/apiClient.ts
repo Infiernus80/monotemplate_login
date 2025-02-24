@@ -42,8 +42,7 @@ export class Http_Api {
 			response => response,
 			(error: AxiosError) => {
 				if (error.response?.status === 401) {
-					Cookies.remove('access_token'); // ✅ Eliminar token si el backend responde con 401
-					// window.location.href = '/login'; // Redirigir al login si es necesario
+					Cookies.remove('access_token');
 				}
 				return Promise.reject(error);
 			},
